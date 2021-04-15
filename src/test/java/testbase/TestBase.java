@@ -46,7 +46,7 @@ public class TestBase implements ITestListener {
         objMainPage.selectSigninButton();
         // Go to signin page
         objSigninPage = new SigninPage(driver);
-        objSigninPage.signIn(TestLoginData.correctData.getEmail(), TestLoginData.correctData.getPassword());
+        objSigninPage.signIn(PropertyLoader.loadProperty("user.username"), PropertyLoader.loadProperty("user.password"));
     }
 
 
