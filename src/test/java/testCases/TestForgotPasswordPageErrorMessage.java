@@ -1,6 +1,5 @@
 package testCases;
 
-import common.SetUp;
 import data.testdata.TestForgotPasswordData;
 import data.testdata.TestMessageData;
 import org.testng.Assert;
@@ -8,8 +7,9 @@ import org.testng.annotations.Test;
 import pages.ForgotPasswordPage;
 import pages.MainPage;
 import pages.SigninPage;
+import testbase.TestBase;
 
-public class TestForgotPasswordPageErrorMessage extends SetUp {
+public class TestForgotPasswordPageErrorMessage extends TestBase {
     MainPage objMainPage;
     SigninPage objSigninPage;
     ForgotPasswordPage objForgotPasswordPage;

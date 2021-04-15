@@ -1,5 +1,6 @@
-package common;
+package testbase;
 
+import common.PropertyLoader;
 import common.driver.WebDriverFactory;
 import data.testdata.TestLoginData;
 import org.apache.commons.io.FileUtils;
@@ -16,7 +17,7 @@ import pages.SigninPage;
 import java.io.File;
 
 
-public class SetUp implements ITestListener {
+public class TestBase implements ITestListener {
     protected WebDriver driver;
     private MainPage objMainPage;
     private SigninPage objSigninPage;

@@ -1,6 +1,5 @@
 package testCases;
 
-import common.SetUp;
 import data.testdata.TestMessageData;
 import data.testdata.TestRegisterData;
 import org.testng.Assert;
@@ -9,8 +8,9 @@ import pages.MainPage;
 import pages.MyAccountPage;
 import pages.RegisterPage;
 import pages.SigninPage;
+import testbase.TestBase;
 
-public class TestRegisterAccount extends SetUp {
+public class TestRegisterAccount extends TestBase {
     MainPage objMainPage;
     SigninPage objSigninPage;
     RegisterPage objRegisterPage;

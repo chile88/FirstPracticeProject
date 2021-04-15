@@ -1,18 +1,13 @@
 package testCases;
 
-import common.SetUp;
 import data.testdata.TestEndToEndBuyProductData;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.*;
+import testbase.TestBase;
 
 
-
-
-
-public class TestEndToEndBuyProducts extends SetUp {
+public class TestEndToEndBuyProducts extends TestBase {
     MainPage objMainPage;
     CategoryPage objCategoryPage;
     ProductPage objProductPage;

@@ -1,13 +1,13 @@
 package testCases;
 
-import common.SetUp;
 import data.testdata.TestLoginData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.SigninPage;
+import testbase.TestBase;
 
-public class TestLogin extends SetUp {
+public class TestLogin extends TestBase {
     MainPage objMainPage;
     SigninPage objSigninPage;
 

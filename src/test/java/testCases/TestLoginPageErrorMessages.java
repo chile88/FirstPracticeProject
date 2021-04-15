@@ -1,6 +1,5 @@
 package testCases;
 
-import common.SetUp;
 import data.testdata.TestLoginData;
 import data.testdata.TestMessageData;
 import data.testdata.TestRegisterData;
@@ -8,8 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.SigninPage;
+import testbase.TestBase;
 
-public class TestLoginPageErrorMessages extends SetUp {
+public class TestLoginPageErrorMessages extends TestBase {
     SigninPage objSigninPage;
     MainPage objMainPage;
 

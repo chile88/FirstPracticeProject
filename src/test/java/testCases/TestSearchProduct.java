@@ -1,16 +1,14 @@
 package testCases;
 
-import common.SetUp;
 import data.testdata.TestMessageData;
 import data.testdata.TestSearchProductData;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.SearchPage;
+import testbase.TestBase;
 
-public class TestSearchProduct extends SetUp {
+public class TestSearchProduct extends TestBase {
     MainPage objMainPage;
     SearchPage objSearchPage;
 
