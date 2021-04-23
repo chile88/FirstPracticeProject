@@ -1,4 +1,4 @@
-package testCases;
+package testcases;
 
 import data.testdata.TestEndToEndBuyProductData;
 import org.testng.Assert;
@@ -22,7 +22,7 @@ public class TestEndToEndBuyProducts extends TestBase {
     OrderHistoryPage objOrderHistoryPage;
 
     @Test
-    public void testBuyProducts() {
+    public void testBuyProducts() throws Exception {
         // Login
         super.logIn();
         // Create Main page

@@ -1,4 +1,4 @@
-package testCases;
+package testcases;
 
 import data.testdata.TestMessageData;
 import data.testdata.TestRegisterData;

@@ -18,4 +18,5 @@ public class WaitElementExists extends Wait<WebElement> {
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         return driver.findElement(locator);
     }
+
 }

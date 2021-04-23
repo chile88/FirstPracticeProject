@@ -1,4 +1,4 @@
-package testCases;
+package testcases;
 
 public class TestRegisterPageMandatoryFields {
 }

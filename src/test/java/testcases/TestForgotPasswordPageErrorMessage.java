@@ -1,4 +1,4 @@
-package testCases;
+package testcases;
 
 import data.testdata.TestForgotPasswordData;
 import data.testdata.TestMessageData;

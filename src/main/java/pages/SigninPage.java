@@ -1,5 +1,6 @@
 package pages;
 
+import common.explicitWait.WaitElementClickable;
 import common.explicitWait.WaitElementVisible;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -73,11 +74,11 @@ public class SigninPage {
     public void createAccountWithEmail(String email) {
         new WaitElementVisible(driver, emailCreate).waitUntil().clear();
         emailCreate.sendKeys(email);
-        new WaitElementVisible(driver, createAccountButton).waitUntil().click();
+        new WaitElementClickable(driver, createAccountButton).waitUntil().click();
     }
 
     public void selectForgotPassword() {
-        new WaitElementVisible(driver, forgotPassword).waitUntil().click();
+        new WaitElementClickable(driver, forgotPassword).waitUntil().click();
     }
 
 }

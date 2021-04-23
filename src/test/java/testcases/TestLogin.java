@@ -1,4 +1,4 @@
-package testCases;
+package testcases;
 
 import data.testdata.TestLoginData;
 import org.testng.Assert;

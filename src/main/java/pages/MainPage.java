@@ -1,13 +1,13 @@
 package pages;
 
-import common.explicitWait.WaitElementClickable;
-import common.explicitWait.WaitElementVisible;
-import common.explicitWait.WaitListElementsVisible;
+import common.explicitWait.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -77,19 +77,19 @@ public class MainPage {
      }
 
     public void selectSigninButton() {
-        new WaitElementVisible(driver, signIn).waitUntil().click();
+        new WaitElementClickable(driver, signIn).waitUntil().click();
     }
 
     public void selectContactButton() {
-        new WaitElementVisible(driver,contactUs).waitUntil().click();
+        new WaitElementClickable(driver,contactUs).waitUntil().click();
     }
 
     public void selectSignoutButton() {
-        new WaitElementVisible(driver, signOut).waitUntil().click();
+        new WaitElementClickable(driver, signOut).waitUntil().click();
     }
 
     public void selectCustomerAccount() {
-        new WaitElementVisible(driver, customerAccount).waitUntil().click();
+        new WaitElementClickable(driver, customerAccount).waitUntil().click();
     }
 
     public void searchProduct(String searchText) {
@@ -114,28 +114,34 @@ public class MainPage {
     }
 
 
-    public void selectCategory(int tabIndex, String category) {
+    public void selectCategory(int tabIndex, String category) throws Exception {
         List<WebElement> categoriesList = null;
         switch (tabIndex) {
             case 1:
-                categoriesList = new WaitListElementsVisible(driver, categoriesUnderTab1).waitUntil();
+                new WaitElementExists(driver, By.cssSelector(".menu-content>li:nth-child(1) li>a")).waitUntil();
+                categoriesList = categoriesUnderTab1;
+//                categoriesList = new WaitListElementsVisible(driver, categoriesUnderTab1).waitUntil();
                 break;
             case 2:
-                categoriesList = new WaitListElementsVisible(driver, categoriesUnderTab2).waitUntil();
+                new WaitElementExists(driver, By.cssSelector(".menu-content>li:nth-child(2) li>a")).waitUntil();
+                categoriesList = categoriesUnderTab2;
+//                categoriesList = new WaitListElementsVisible(driver, categoriesUnderTab2).waitUntil();
                 break;
             case 3:
-                categoriesList = new WaitListElementsVisible(driver, categoriesUnderTab3).waitUntil();
+                new WaitElementExists(driver, By.cssSelector(".menu-content>li:nth-child(3) li>a")).waitUntil();
+                categoriesList = categoriesUnderTab3;
+//                categoriesList = new WaitListElementsVisible(driver, categoriesUnderTab3).waitUntil();
         }
         if (categoriesList != null) {
             for (int i = 0; i < categoriesList.size(); i++) {
                 if (categoriesList.get(i).getAttribute("innerText").equals(category)) {
-                    categoriesList.get(i).click();
+                    new WaitElementVisible(driver,categoriesList.get(i)).waitUntil().click();
                     break;
                 }
             }
         }
         else {
-            System.out.println("Wrong data");
+            throw new Exception("Wrong data");
         }
     }
 }

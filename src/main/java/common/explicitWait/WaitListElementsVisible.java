@@ -1,5 +1,6 @@
 package common.explicitWait;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,9 +16,13 @@ public class WaitListElementsVisible extends Wait<List<WebElement>> {
 
     }
 
+    public WaitListElementsVisible(WebDriver driver, By locator) {
+        this(driver, driver.findElements(locator));
+    }
+
     public List<WebElement> waitUntil() {
         wait.until(ExpectedConditions.visibilityOfAllElements(listElement));
-
         return listElement;
     }
+
 }

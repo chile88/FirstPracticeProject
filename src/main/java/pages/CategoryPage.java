@@ -2,7 +2,9 @@ package pages;
 
 import common.actions.ActionScroll;
 import common.explicitWait.WaitElementVisible;
+import common.explicitWait.WaitListElementExist;
 import common.explicitWait.WaitListElementsVisible;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,6 +36,7 @@ public class CategoryPage {
 
 
 
+
     // Actions
 
     public String getCategoryName() {
@@ -51,7 +54,7 @@ public class CategoryPage {
 
     public void hoverProduct(int index) {
         Actions actions = new Actions(driver);
-        new WaitListElementsVisible(driver, productList).waitUntil();
+        new WaitListElementExist(driver, By.cssSelector(".product_list .product-container .product-name")).waitUntil();
         new ActionScroll(driver, productList.get(index)).perform();
         actions.moveToElement(productList.get(index)).perform();
     }
